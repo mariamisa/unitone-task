@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     (async () => {
       try {
         setLoading(true);
-        const { data } = await Axios('/api/v1/items?page=1&limit=30');
+        const { data } = await Axios('/api/v1/items?page=1&limit=10');
         if (unmounted) {
           setItems(data.data);
           setLoading(false);

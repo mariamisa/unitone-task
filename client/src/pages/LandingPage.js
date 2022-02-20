@@ -1,22 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { ItemContext } from '../Context/Items';
 import Modal from '../Components/modal';
+import List from '../Components/listItems';
 
-const Dashboard = () => {
-  const { items } = useContext(ItemContext);
-
-  return (
+const Dashboard = () => (
     <>
     <Modal/>
-      {items?.map(({ name, description }, index) => (
-        <div key={index}>
-          <h1>{name}</h1>
-          <p>{description}</p>
-        </div>
-      ))}
+      <List/>
     </>
-  );
-};
+);
 
 export default Dashboard;
