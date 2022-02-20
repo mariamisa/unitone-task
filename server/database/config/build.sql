@@ -1,0 +1,9 @@
+BEGIN;
+DROP TABLE IF EXISTS items;
+CREATE TABLE items (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(55) NOT NULL,
+    description VARCHAR(255) NOT NULL
+);
+
+COMMIT;
