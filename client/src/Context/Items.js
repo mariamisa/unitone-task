@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const ItemContext = createContext();
 
-const AuthProvider = ({ children }) => {
+const ItemProvider = ({ children }) => {
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState(null);
@@ -46,8 +46,8 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-AuthProvider.propTypes = {
+ItemProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default AuthProvider;
+export default ItemProvider;
