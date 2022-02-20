@@ -8,13 +8,14 @@ const AuthProvider = ({ children }) => {
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState(null);
+  const [page, setPage] = React.useState(1);
 
   useEffect(() => {
     let unmounted = true;
     (async () => {
       try {
         setLoading(true);
-        const { data } = await Axios('/api/v1/items?page=1&limit=10');
+        const { data } = await Axios(`/api/v1/items?page=${page}&limit=5`);
         if (unmounted) {
           setItems(data.data);
           setLoading(false);
@@ -27,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unmounted = false;
     };
-  }, [refresh]);
+  }, [refresh, page]);
 
   return (
     <ItemContext.Provider
@@ -36,6 +37,8 @@ const AuthProvider = ({ children }) => {
         items,
         refresh,
         setRefresh,
+        page,
+        setPage
       }}
     >
       {children}
