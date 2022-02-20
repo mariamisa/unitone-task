@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Modal } from '@mui/material';
 
-import Form from './form';
+import Form from './addItemForm';
 
 const style = {
   position: 'absolute',

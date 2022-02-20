@@ -7,7 +7,7 @@ import validationSchema from '../../utils/addItemValidation';
 
 import useStyles from './style';
 
-function AddHouse() {
+function AddItemForm() {
   const classes = useStyles();
 
   const [name, setName] = useState('');
@@ -132,4 +132,4 @@ function AddHouse() {
   );
 }
 
-export default AddHouse;
+export default AddItemForm;

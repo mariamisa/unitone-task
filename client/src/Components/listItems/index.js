@@ -40,7 +40,12 @@ export default function FolderList() {
     };
   }, [itemId]);
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="baseline"
+    >
       <Grid item xs={4}>
         <Pagination count={10} page={page} onChange={handleChange} />
         <List
